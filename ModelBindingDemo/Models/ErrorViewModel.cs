@@ -1,4 +1,4 @@
-namespace ModelBindingDemo.Models
+﻿namespace ModelBindingDemo.Models
 {
     public class ErrorViewModel
     {
