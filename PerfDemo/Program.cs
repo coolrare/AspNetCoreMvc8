@@ -1,4 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using PerfDemo.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ContosoUniversityContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
