@@ -1,14 +1,21 @@
-﻿@model IEnumerable<PerfDemo.Models.Course>
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@model IEnumerable<PerfDemo.Models.Course>
 
 @{
     ViewData["Title"] = "Index";
 }
+
+<link href="~/css/PagedList.css" rel="stylesheet" type="text/css" />
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+
 <table class="table">
     <thead>
         <tr>

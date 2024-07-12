@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PerfDemo.Models;
+using X.PagedList;
 
 namespace PerfDemo.Controllers
 {
@@ -19,10 +20,13 @@ namespace PerfDemo.Controllers
         }
 
         // GET: Courses
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var contosoUniversityContext = _context.Courses.Include(c => c.Department);
-            return View(await contosoUniversityContext.ToListAsync());
+            var courses = _context.Courses.Include(c => c.Department).AsQueryable();
+
+            var onePageOfProducts = await courses.ToPagedListAsync(page, 4);
+
+            return View(onePageOfProducts);
         }
 
         // GET: Courses/Details/5
