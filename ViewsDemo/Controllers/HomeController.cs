@@ -23,6 +23,21 @@ namespace ViewsDemo.Controllers
             return View();
         }
 
+        public ActionResult Demo1()
+        {
+            return View();
+        }
+
+        public ActionResult Demo2()
+        {
+            return View();
+        }
+
+        public ActionResult Demo3()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

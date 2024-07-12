@@ -1,0 +1,22 @@
+﻿<div>
+    @using (Html.BeginForm())
+    {
+        <label for="FirstName">First Name:</label>
+
+        <br />
+        @Html.TextBox("FirstName")
+
+        <br />
+
+        <br />
+        <label for="LastName">Last Name:</label>
+
+        <br />
+        @Html.TextBox("LastName")
+
+        <br />
+
+        <br />
+        <input type="submit" value="Register" />
+    }
+</div>

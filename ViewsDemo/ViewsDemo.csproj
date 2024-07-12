@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="bundleconfig.json" />
+    <None Include="bundleconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="bundleconfig.json" />
+    <PackageReference Include="BuildBundlerMinifier2022" Version="2.9.9" />
   </ItemGroup>
 
 </Project>

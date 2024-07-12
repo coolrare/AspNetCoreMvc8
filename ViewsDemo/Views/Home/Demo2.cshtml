@@ -1,0 +1,23 @@
+﻿@model RegistrationViewModel
+<div>
+    @using (Html.BeginForm("Demo2", "Home", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        <label for="FirstName">First Name:</label>
+
+        <br />
+        @Html.TextBoxFor(m => m.FirstName)
+
+        <br />
+
+        <br />
+        <label for="LastName">Last Name:</label>
+
+        <br />
+        @Html.TextBoxFor(m => m.LastName)
+
+        <br />
+
+        <br />
+        <input type="submit" value="Register" />
+    }
+</div>
