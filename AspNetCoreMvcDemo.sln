@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelBindingDemo", "ModelBindingDemo\ModelBindingDemo.csproj", "{B5D35BEA-1129-4A1A-B305-0167CEAAE9D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelBindingDemo", "ModelBindingDemo\ModelBindingDemo.csproj", "{B5D35BEA-1129-4A1A-B305-0167CEAAE9D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingDemo", "RoutingDemo\RoutingDemo.csproj", "{C80DE5C5-592A-442A-B9B4-1F881D87DFB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoutingDemo", "RoutingDemo\RoutingDemo.csproj", "{C80DE5C5-592A-442A-B9B4-1F881D87DFB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewsDemo", "ViewsDemo\ViewsDemo.csproj", "{3B5C0727-FF2F-40E9-BBC9-BB170A652D78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C80DE5C5-592A-442A-B9B4-1F881D87DFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C80DE5C5-592A-442A-B9B4-1F881D87DFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C80DE5C5-592A-442A-B9B4-1F881D87DFB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B5C0727-FF2F-40E9-BBC9-BB170A652D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B5C0727-FF2F-40E9-BBC9-BB170A652D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B5C0727-FF2F-40E9-BBC9-BB170A652D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B5C0727-FF2F-40E9-BBC9-BB170A652D78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
