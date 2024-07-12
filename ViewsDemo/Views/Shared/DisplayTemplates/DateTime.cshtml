@@ -1,0 +1,10 @@
+﻿@model DateTime?
+
+@if (Model.HasValue)
+{
+    @Model.Value.ToString("yyyy-MM-dd")
+}
+else
+{
+    @:沒有日期
+}

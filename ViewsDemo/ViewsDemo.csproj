@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier2022" Version="2.9.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
   </ItemGroup>
 
 </Project>
