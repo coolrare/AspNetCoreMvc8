@@ -1,0 +1,14 @@
+﻿@inject ICourseRepository repo
+@inject IUnitOfWork uow
+@{
+    repo.UnitOfWork = uow;
+
+    var data = repo.FindAll();
+
+    <ol>
+        @foreach (var item in data)
+        {
+            <li>@item.Title</li>
+        }
+    </ol>
+}
