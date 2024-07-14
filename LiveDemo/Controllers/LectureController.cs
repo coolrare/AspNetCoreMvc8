@@ -75,12 +75,82 @@ namespace LiveDemo.Controllers
 
             if (item is null)
             {
-                return BadRequest();
+                return BadRequest("找不到對應的課程");
             }
 
             item.Title = slug;
 
             return View(item);
+        }
+
+        [HttpGet("edit/{id}")]
+        public ActionResult Edit(int id)
+        {
+            var item = repo.FindOne(id);
+
+            if (item is null)
+            {
+                return NotFound("找不到課程");
+            }
+
+            return View(item);
+        }
+
+        [HttpPost("edit/{id}")]
+        public ActionResult Edit(int id, Course lecture)
+        {
+            if (ModelState.IsValid)
+            {
+                var existingLecture = repo.FindOne(id);
+                if (existingLecture is null)
+                {
+                    return NotFound("找不到課程");
+                }
+
+                existingLecture.Title = lecture.Title;
+                existingLecture.Credits = lecture.Credits;
+                existingLecture.Description = lecture.Description;
+                existingLecture.DepartmentId = lecture.DepartmentId;
+                existingLecture.Slug = lecture.Slug;
+                existingLecture.IsDeleted = lecture.IsDeleted;
+                existingLecture.StartDate = lecture.StartDate;
+
+                repo.UnitOfWork.Update(existingLecture);
+                repo.UnitOfWork.Commit();
+                return RedirectToAction("Index");
+            }
+
+            return View(lecture);
+        }
+
+        [HttpGet("delete/{id}")]
+        public ActionResult Delete(int id)
+        {
+            var item = repo.FindOne(id);
+
+            if (item is null)
+            {
+                return NotFound("找不到課程");
+            }
+            return View(item);
+
+        }
+
+        [HttpDelete("delete/{id}")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var item = repo.FindOne(id);
+
+            if (item is null)
+            {
+                return NotFound("找不到課程");
+                    
+            }
+
+            repo.Delete(item);
+            repo.UnitOfWork.Commit();
+            
+            return RedirectToAction("");
         }
     }
 }
