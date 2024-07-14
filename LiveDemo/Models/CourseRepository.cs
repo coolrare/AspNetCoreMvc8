@@ -25,6 +25,18 @@ public class CourseRepository : EFRepository<Course>, ICourseRepository
     {
         entity.IsDeleted = true;
     }
+    public  void Update(Course entity)
+    {
+        var existingEntity = this.All().FirstOrDefault(p => p.CourseId == entity.CourseId);
+        if (existingEntity != null)
+        {
+            existingEntity.Title = entity.Title;
+            existingEntity.Credits = entity.Credits;
+            existingEntity.Description = entity.Description;
+            existingEntity.DepartmentId = entity.DepartmentId;
+            // 更新其他需要的屬性
+        }
+    }
 }
 
 public interface ICourseRepository : IRepository<Course>
@@ -34,4 +46,5 @@ public interface ICourseRepository : IRepository<Course>
     Course? FindOne(string slug);
 
     IQueryable<Course> FindAll();
+    void Update(Course course);
 }
