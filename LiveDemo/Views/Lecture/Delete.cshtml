@@ -1,9 +1,8 @@
 ﻿@model LiveDemo.Models.Course
 
 @{
-    ViewData["Title"] = "Delete Course";
+    ViewData["Title"] = "Delete";
 }
-
 <div class="container mt-4">
     <h1>Delete Course</h1>
     <div class="alert alert-warning">
@@ -38,7 +37,7 @@
             <form asp-action="Delete" asp-route-id="@Model.CourseId" method="post">
                 <input type="hidden" asp-for="CourseId" />
                 @Html.AntiForgeryToken()
-
+                
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-danger">
                         <i class="bi bi-trash"></i> Delete
