@@ -3,8 +3,12 @@ using PerfDemo.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// builder.Services.Add本公司所有的背景排程();
+
 builder.Services.AddDbContext<ContosoUniversityContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddHttpClient();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
